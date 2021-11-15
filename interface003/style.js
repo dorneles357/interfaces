@@ -13,16 +13,16 @@ document.querySelectorAll('.card').forEach(item =>{
 
 function click(){
     par(this.id);
-    document.getElementById(`${this.id}`).classList.toggle('anima3');
-    revelar(this.id);
-  
+    if(click_par.length === 3){
+        alert("Apenas dois clicks por vez!!");
+    }else{
+        document.getElementById(`${this.id}`).classList.toggle('anima3');
+        revelar(this.id);
+    }
 }
 
 function par(id){
     click_par.push(id);
-
-
-    
     if(click_par.length === 2){
         if(click_par[0] === click_par[1]){
             alert('devagar campeão!')
@@ -59,7 +59,7 @@ function par(id){
 
 function revelar(id){
     setTimeout(() => {
-        document.getElementById(`${id}`).innerHTML = `<img src='./1-triangulo-acutangulo.jpg' width='100' height='110'>`;
+        document.getElementById(`${id}`).innerHTML = `img here!`;
     }, 400);
 }
 
